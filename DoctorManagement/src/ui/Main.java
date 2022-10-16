@@ -1,6 +1,7 @@
 package ui;
 
 import controller.DoctorController;
+import entity.Doctor;
 import utils.Validation;
 
 /*
@@ -29,19 +30,41 @@ public class Main {
                 + "Enter choice: ";
         while (true) {
             System.out.println(menu);
-            int choice = Validation.checkInputIntLimit(menu, 1, 5);
+            int choice = Validation.getInt(menu,"Please enter Integer Number!", 1, 5);
             switch (choice) {
                 case 1:
-                    System.out.println("---- Add Doctor ----");
-                    dc.addDoctor();
+                    try {
+                        System.out.println("---- Add Doctor ----");
+                        Doctor add = dc.addDoctor();
+                        System.out.println("Add doctor success!");
+                        
+                    } catch (Exception e) {
+                        System.err.println(e.getMessage());
+                    }
+                    
+                    
                     break;
                 case 2:
-                    System.out.println("---- Update Doctor ----");
-                    dc.updateDoctor();
+                    try {
+                        System.out.println("---- Update Doctor ----");
+                        Doctor update = dc.updateDoctor();
+                        System.out.println("Update doctor success!");
+                        
+                    } catch (Exception e) {
+                        System.err.println(e.getMessage());
+                    }
                     break;
                 case 3:
-                    System.out.println("---- Delete Doctor ----");
-                    dc.deleteDoctor();
+                    try {
+                        System.out.println("---- Delete Doctor ----");
+                        Doctor delete = dc.deleteDoctor();
+                        System.out.println("Delete doctor success!");
+                        
+                    } catch (Exception e) {
+                        System.err.println(e.getMessage());
+                    }
+                    
+                    
                     break;
                 case 4:
                     System.out.println("---- Search Doctor ----");

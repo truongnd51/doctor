@@ -27,14 +27,14 @@ public class DoctorController {
     public Doctor inputDoc() throws Exception {
         doctorInputer = new DoctorInputer();
         doctorInputer.inputDoctor();
-        Doctor d = doctorInputer.getDoctor();
-        doctorManager.addDoctor(d);
-        return d;
+        return doctorInputer.getDoctor();
+        
     }
 
     public Doctor addDoctor() throws Exception {
         Doctor d = inputDoc();
-        return d;
+        return doctorManager.addDoctor(d);
+        
     }
 
     public Doctor updateDoctor() throws Exception {
@@ -56,7 +56,7 @@ public class DoctorController {
         String code = Validation.getStringByRegex("Enter Code: ", "Please enter character only!", "[A-Za-z0-9]+");
         ArrayList<Doctor> listFound = doctorManager.searchByCode(code);
         if(listFound.isEmpty()){
-            System.out.println("Not found doctor!");
+            System.err.println("Not found doctor!");
         }else{
             System.out.println("----- Result -----");
             System.out.printf("%-10s%-15s%-25s%-20s\n", "Code", "Name",

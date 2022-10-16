@@ -60,35 +60,6 @@ public class Validation {
         }
     }
 
-//    //check user input string
-//    public static String checkInputString(String mess) {
-//        //loop until user input correct
-//        while (true) {
-//            Scanner in = new Scanner(System.in);
-//            String result = in.nextLine().trim();
-//            if (result.isEmpty()) {
-//                System.out.println("Not empty");
-//                System.out.print("Enter again: ");
-//            } else {
-//                return result;
-//            }
-//        }
-//    }
-//
-//    //check user input int
-//    public static int checkInputInt(String mess) {
-//        //loop until user input correct
-//        while (true) {
-//            try {
-//                int result = Integer.parseInt(in.nextLine().trim());
-//                return result;
-//            } catch (NumberFormatException e) {
-//                System.out.println("Please enter integer");
-//                System.out.print("Enter again: ");
-//            }
-//        }
-//    }
-
     //check code exist or not
     public static boolean checkCodeExist(ArrayList<Doctor> ld, String code) {
         //check from first to last list doctor
